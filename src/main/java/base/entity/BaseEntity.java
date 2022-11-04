@@ -31,9 +31,6 @@ public class BaseEntity<ID extends Serializable> implements Serializable{
         return this.getId() == null;
     }
 
-    @CreationTimestamp
-    private LocalDateTime creationTime;
-
     /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

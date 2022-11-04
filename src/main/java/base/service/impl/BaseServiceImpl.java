@@ -74,7 +74,7 @@ public class BaseServiceImpl<E extends BaseEntity<ID>, ID extends Serializable, 
         if (e == null) {
             throw new NotFoundClassException("there is no result with this id...!!");
         }
-        return e; // require try catch???
+        return e;
     }
 
     @Override
