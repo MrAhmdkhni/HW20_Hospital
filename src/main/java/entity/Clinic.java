@@ -1,10 +1,7 @@
 package entity;
 
 import base.entity.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,6 +9,7 @@ import java.util.Set;
 @Entity
 public class Clinic extends BaseEntity<Long> {
 
+    @Column(nullable = false)
     private String name;
 
     @OneToOne // har clinic y admin dare
@@ -22,4 +20,23 @@ public class Clinic extends BaseEntity<Long> {
 
     @ManyToMany(mappedBy = "clinics") // har clinic chan ta patient dare
     private Set<Patient> patients = new HashSet<>();
+
+    public Clinic(String name) {
+        this.name = name;
+    }
+
+    public Clinic(String name, Admin admin) {
+        this.name = name;
+        this.admin = admin;
+    }
+
+    public Clinic() {
+    }
+
+    @Override
+    public String toString() {
+        return "Clinic {" +
+                "name = '" + name + '\'' +
+                "} ";
+    }
 }
