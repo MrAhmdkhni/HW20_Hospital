@@ -17,10 +17,12 @@ public class Patient extends Person {
     private Set<Prescription> prescriptions = new HashSet<>();
 
 
-    public Patient(String firstname, String lastname, String nationalCod, String username, String password) {
-        super(firstname, lastname, nationalCod, username, password);
+    public Patient(String firstname, String lastname, String nationalCode, String username, String password) {
+        super(firstname, lastname, nationalCode, username, password);
     }
 
     public Patient() {
     }
+
+
 }
